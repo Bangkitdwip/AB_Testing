@@ -11,7 +11,7 @@ page = st.sidebar.radio('Pilih halaman:', ['Home', 'Projek','Kontak'])
 
 if page == 'Home':
     st.markdown("<h1 style='text-align: center;'>Welcome To My Portofolio</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center;'>Data Scientist Enthusiast</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>Data Science Enthusiast</h2>", unsafe_allow_html=True)
 
 elif page == 'Projek':
     import projek
