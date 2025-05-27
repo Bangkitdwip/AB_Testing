@@ -56,7 +56,7 @@ def projek():
         st.write('A/B Test: Whether a discount was applied (A/B)')
         st.write('Discount_Amount: Discount value applied (20%)')
         st.write('Final Sales : Sales After Discount')
-        df = pd.read_csv('/Users/hissha/Downloads/portofolio/kopisale.csv')
+        df = pd.read_csv('kopisale.csv')
         st.markdown("<h2 style='text-align: justify;'>Datasets</h2>", unsafe_allow_html=True)
         st.dataframe(df)
         if 'Unnamed: 0' in df.columns:
