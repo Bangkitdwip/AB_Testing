@@ -188,4 +188,3 @@ def projek():
     st.write('1. Mensiasati strategi diskon dengan minimal pembelian sehingga menaikkan quantity dan revenue')
     st.write('2. Memberikan diskon kepada produk yang laris sehingga tidak menurunkan revenue tetapi menaikkan quantity pembelian')
     st.write('3. Meningkatkan promosi di kota-kota yang memiliki rata-rata pembelian tertinggi')
-    st.subheader('Link Github')
