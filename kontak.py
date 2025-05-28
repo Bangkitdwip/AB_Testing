@@ -8,6 +8,6 @@ def link():
     st.markdown("<div style='text-align: justify;'>Actively developing skills in Python, data visualization, and machine learning through independent projects and platforms like Streamlit.", unsafe_allow_html=True)
     st.markdown("<div style='text-align: justify;'> Known for being analytical, fast learner, and consistently eager to explore how data can drive innovation in various industries.</div>", unsafe_allow_html=True)
 
-    st.write('/n')
+    st.write('\n')
     st.markdown('Email : bangkitdwip13@gmail.com')
     st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/bangkit-dwiputra)", unsafe_allow_html=True)
