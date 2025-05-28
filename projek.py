@@ -169,15 +169,62 @@ def projek():
         st.plotly_chart(fig4)
 
     if st.checkbox("Tren Penjualan Bulanan"):
-        st.subheader("Tren Penjualan Bulanan")
+        st.subheader("📈 Tren Penjualan Bulanan")
+        
+        # Konversi kolom Date
         df["Date"] = pd.to_datetime(df["Date"])
-        df["Month"] = df["Date"].dt.to_period("M").astype(str)
-        trend = df.groupby(["Month", "A/B Test"])["Final Sales"].sum().reset_index()
-        fig5 = px.line(trend, x="Month", y="Final Sales", color="A/B Test", markers=True)
+        df["Month"] = df["Date"].dt.to_period("M").dt.to_timestamp()  # Gunakan datetime
+
+        # Ambil bulan terendah dan tertinggi
+        min_month = df["Month"].min()
+        max_month = df["Month"].max()
+
+        # Ambil bulan terendah dan tertinggi
+        min_month = df["Month"].min()
+        max_month = df["Month"].max()
+
+        # Konversi ke datetime untuk slider
+        min_date = min_month.to_pydatetime()
+        max_date = max_month.to_pydatetime()
+        default_start = min_date
+        default_end = max_date
+
+        start_month, end_month = st.slider(
+            "Pilih Rentang Bulan",
+            min_value=min_date,
+            max_value=max_date,
+            value=(default_start, default_end),
+            format="MMM YYYY")
+
+        # Filter berdasarkan bulan
+        filtered_df = df[(df["Month"] >= start_month) & (df["Month"] <= end_month)]
+
+        # Hitung trend per bulan dan grup
+        trend = filtered_df.groupby(["Month", "A/B Test"])["Final Sales"].sum().reset_index()
+
+        # Plot
+        fig5 = px.line(
+            trend,
+            x="Month",
+            y="Final Sales",
+            color="A/B Test",
+            markers=True,
+            text="Final Sales"
+        )
+
         fig5.update_traces(
-            texttemplate='%{text:.0f}',  
-            textposition='top center')
-        st.plotly_chart(fig5)
+            texttemplate='%{text:.0f}',
+            textposition='top center'
+        )
+
+        fig5.update_layout(
+            xaxis_title="Bulan",
+            yaxis_title="Total Penjualan",
+            legend_title="Kelompok A/B",
+            hovermode="x unified"
+        )
+
+        st.plotly_chart(fig5, use_container_width=True)
 
     st.subheader('Kesimpulan & Rekomendasi Bisnis')
     st.write('### Kesimpulan')
