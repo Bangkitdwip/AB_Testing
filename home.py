@@ -13,6 +13,6 @@ elif page == 'Projek':
     import projek
     projek.projek()
 
-elif page == 'Kontak':
+elif page == 'Tentang Saya':
     import kontak
     kontak.link()
