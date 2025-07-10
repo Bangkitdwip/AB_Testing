@@ -1,7 +1,7 @@
 # 📊 A/B Testing dan Analisis Penjualan Kopi
 
 Selamat datang di proyek analisis penjualan dan A/B testing menggunakan **Streamlit**!  
-🔗 [Lihat Aplikasinya di Streamlit](https://bangkit-dwiputra-portofolio.streamlit.app/)
+🔗 [Lihat Aplikasinya di Streamlit](https://abtesting-mfxedswzedcic7xrjdgrgb.streamlit.app/)
 
 ---
 
